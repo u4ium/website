@@ -7,7 +7,7 @@
         <lastBuildDate>Sun, 17 Jul 2022 21:54:54 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
-        <language>en</language>
+        <language>zh</language>
         <item>
             <title><![CDATA[Docker-Compose on TrueNAS SCALE using TrueCharts]]></title>
             <link>https://truecharts.org/blog/Docker-Compose on TrueNAS SCALE using TrueCharts</link>
