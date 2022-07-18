@@ -4,7 +4,7 @@
         <title>TrueCharts Blog</title>
         <link>https://truecharts.org/zh/blog</link>
         <description>TrueCharts Blog</description>
-        <lastBuildDate>Mon, 18 Jul 2022 08:39:55 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 18 Jul 2022 08:58:21 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[使用 TrueCharts 在 TrueNAS 上的 Docker-Compose]]></title>
             <link>https://truecharts.org/zh/blog/使用 TrueCharts 在 TrueNAS 上的 Docker-Compose</link>
             <guid>使用 TrueCharts 在 TrueNAS 上的 Docker-Compose</guid>
-            <pubDate>Mon, 18 Jul 2022 08:39:55 GMT</pubDate>
+            <pubDate>Mon, 18 Jul 2022 08:58:21 GMT</pubDate>
             <description><![CDATA[从TrueNAS SCALE 开发的早期阶段，我们已经阅读了许多关于Docker-compose没有得到TrueNAS SCALE 支持的抱怨。 这是可以理解的，因为这是家居用户最常用的停泊器部署选项之一。]]></description>
             <content:encoded><![CDATA[<p>从TrueNAS SCALE 开发的早期阶段，我们已经阅读了许多关于Docker-compose没有得到TrueNAS SCALE 支持的抱怨。 这是可以理解的，因为这是家居用户最常用的停泊器部署选项之一。</p><p>TrueNAS SCALE 社区已经找到了一些有趣的方法来启用 Docker-Compose。 但所有这些办法都有一些缺点：</p><ul><li><p>它不是未来的证据，它可以在没有警告的情况下永久地被精减，并且有任何TrueNAS SCALE 更新。</p></li><li><p>它本来就会破坏SCALE应用，甚至常常要求这些应用被禁用。</p></li><li><p>对此工作不支持。</p></li></ul><p>为了解决这个问题，我们决定把问题交给我们自己处理。 我们高兴地最后宣布我们的解决办法：</p><p><strong>TrueCharts 的 Docker-Compose TrueNAS SCALE 应用程序</strong></p><p>它的设计是从头开始，让用户在主机系统上运行Docker-Compose几乎具有相同的体验。 甚至包含一些好的调整：</p><ul><li><p>它得到TrueNAS SCALE 应用程序的完全支持，因此它将在更新后存活。</p></li><li><p>有一个GUI选项来输入您的 Docker-Compose 文件，这将在重启后存活。</p></li><li><p>完全自成一体，不会修改默认停靠堆栈。</p></li><li><p>完全兼容与其他TrueNAS SCALE 应用程序一起运行，因此您可以轻松地将您的 Docker-Compose 应用程序迁移到TrueNAS SCALE 应用程序中。</p></li><li><p>如果应用程序不能作为广告使用，我们是您的支持。</p></li></ul><p>所有这些都只有一个警告：</p><ul><li>Docker-Compose 命令必须从容器内执行。</li></ul><p>我们的解决办法基于停靠码头的官方停靠码头集装箱，并且增加了一些工具来优化单一集装箱部署。 也许最令人感兴趣的是，容器本机可以访问 <code>/mnt</code>， <code>/root</code> 和 <code>/cluster</code>, 所以您可以使用您的容器，比如您正在主机上工作。</p><p>这样，我们希望TrueNAS SCALE 最终能够开始填充诸如Unraid and TrueNAS Core 之类的大片解决方案，并向社区提供他们想要的东西， 不仅仅是他们需要的东西！</p>]]></content:encoded>
         </item>
@@ -20,15 +20,15 @@
             <title><![CDATA[作为基础的头盔]]></title>
             <link>https://truecharts.org/zh/blog/作为基础的头盔</link>
             <guid>作为基础的头盔</guid>
-            <pubDate>Mon, 18 Jul 2022 08:39:55 GMT</pubDate>
+            <pubDate>Mon, 18 Jul 2022 08:58:21 GMT</pubDate>
             <description><![CDATA[在仔细考虑了我们如何推动该项目之后，我们决定把我们的头盔图放在第一位，其他解决方案放在第二位。 我们这样做的理由， 这就是说，我们想让用户更灵活地使用Kubernetes平台，并体验那里的所有优秀项目。]]></description>
-            <content:encoded><![CDATA[<p>在仔细考虑了我们如何推动该项目之后，我们决定把我们的头盔图放在第一位，其他解决方案放在第二位。 我们这样做的理由， 这就是说，我们想让用户更灵活地使用Kubernetes平台，并体验那里的所有优秀项目。</p><p><strong>SCALE 和 TrueCharts</strong></p><p>这对我们的SCALE 用户意味着什么？ 实事求是：我们仍将全力支持和构建SCALE应用程序。 然而，仍然存在着这种情况。 这确实意味着我们将更公开地开始调用我们的作品“图表”而不是“应用”，而且一些新的图表将不支持在方框外的SCALE。</p><p><strong>Helm 和 TrueCharts</strong></p><p>我们还要大量上线来支持想直接使用 Helm 自定义YAML 的用户。 更多配置更灵活的应用。 与此同时，我们将努力使飞毛腿图形界面更加自动化。 虽然这可能会导致一个更多的“迷你”图形界面，但它会使更多的东西与我们提供的原生的Helm 部署“同步”。</p><p>对于新的开发者来说，所有这一切都将提供一个更容易的体验：只需构建头盔图并为它提交PR 不再需要通过SCALE GUI 描述的曲线移动了。</p><p>所有这些变化结合在一起，我们希望能够更快地为更多的人收藏我们最棒的图表！</p>]]></content:encoded>
+            <content:encoded><![CDATA[<p>在仔细考虑了我们如何推动该项目之后，我们决定把我们的头盔图放在第一位，其他解决方案放在第二位。 我们这样做的理由， 这就是说，我们想让用户更灵活地使用Kubernetes平台，并体验那里的所有优秀项目。</p><p><strong>SCALE 和 TrueCharts</strong></p><p>这对我们的SCALE 用户意味着什么？ 实事求是：我们仍将全力支持和构建SCALE应用程序。 这确实意味着我们将更公开地开始调用我们的作品“图表”而不是“应用”，而且一些新的图表将不支持在方框外的SCALE。</p><p><strong>Helm 和 TrueCharts</strong></p><p>我们还要大量上线来支持想直接使用 Helm 自定义YAML 的用户。 更多配置更灵活的应用。 与此同时，我们将努力使飞毛腿图形界面更加自动化。 虽然这可能会导致一个更多的“迷你”图形界面，但它会使更多的东西与我们提供的原生的Helm 部署“同步”。</p><p>对于新的开发者来说，所有这一切都将提供一个更容易的体验：只需构建头盔图并为它提交PR 不再需要通过SCALE GUI 描述的曲线移动了。 不再需要通过SCALE GUI 描述的曲线移动了。</p><p>所有这些变化结合在一起，我们希望能够更快地为更多的人收藏我们最棒的图表！</p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Meet TrueCharts - 第一个应用商店适用于TrueNAS SCALE]]></title>
             <link>https://truecharts.org/zh/blog/Meet TrueCharts - 第一个应用商店适用于TrueNAS SCALE</link>
             <guid>Meet TrueCharts - 第一个应用商店适用于TrueNAS SCALE</guid>
-            <pubDate>Mon, 18 Jul 2022 08:39:55 GMT</pubDate>
+            <pubDate>Mon, 18 Jul 2022 08:58:21 GMT</pubDate>
             <description><![CDATA[企业储存不必僵化和困难。 TrueNAS SCALE 是缩放储存和超合并的基础设施，也是灵活的。 这种灵活性的关键是纳入Kubernetes用于部署集装箱化(例如码头)。 Kubernetes允许将单个集装箱或集装箱箱轻易部署在统一的基础设施上。  目前正在预先配置越来越多的这些应用软件，以便利用TrueNAS-增强的头盔图实现容易部署。]]></description>
             <content:encoded><![CDATA[<p>企业储存不必僵化和困难。 TrueNAS SCALE 是缩放储存和超合并的基础设施，也是灵活的。 这种灵活性的关键是纳入Kubernetes用于部署集装箱化(例如码头)。 Kubernetes允许将单个集装箱或集装箱箱轻易部署在统一的基础设施上。  目前正在预先配置越来越多的这些应用软件，以便利用TrueNAS-增强的头盔图实现容易部署。</p><p>用户和第三方现在可以建立应用程序图表目录，以便于应用存储体验。 这些目录就像TrueNAS SCALE的应用商店。  iXsystem一直在协作和赞助开发TrueCharts的团队，这是这些应用商店中的第一个也是最全面的商店。 最好的是，TrueCharts 应用程序是免费和开源的。 TrueCharts为TrueNAS用户提供了一套不同的易于部署的应用程序，有180多个可用的应用可以从中选择。  我们邀请TrueCharts团队撰写客人博客来分享详情。</p><p><strong>TrueCharts</strong></p><p>通过精简Kubernetes支持其应用软件， TrueNAS SCALE 已经迈出了一大步，将Kubernetes 带到群众，同时通过增强社区建立自己的应用和目录的能力，坚持其开放源码的理念。 这种用户选择自己最喜欢的应用目录的能力已经被证明是受欢迎的。 聚会TrueCharts，第一个社区应用目录！</p><p>TrueCharts是由一个组的创始人建造的，他们为TrueNAS CORE开发了安装脚本，称为“Jailman”。 TrueCharts提供的不仅仅是Jailman能够提供的东西：一个灵活、方便用户的安装程序，并且拥有用户需要和应有的选择自由！</p><p>作为一个完全独立的项目， 自那时以来，TrueCharts社区已经花费了整整一年精心设计的工具，提供Kubernetes必须为TrueNAS SCALE应用生态系统提供的许多优秀功能。 例如，所有应用都可以只需使用 Traefik 逆向代理和 Wireguard VPN 功能即可启用。 除了诸如Plex、Nextcloud和Minio等官方应用之外， TrueCharts 添加了多种应用，包括Vaultwarden、Handbrake、OpenLDAP、Photoprism、Pihole、Syncites等等。</p><p>TrueCharts是本着一个首要目标设计的：为新到Kubernetes的用户提供一个坚实的框架，同时也为有经验的用户提供尽可能多的Kubernetes功能。 iXsystem的官方应用侧重于简单的应用， TrueCharts侧重于那些需要更大灵活性的应用程序，以便根据特定的使用案例和系统环境自定义应用程序。 TrueCharts由TrueNAS SCALE UI内部管理。 只需添加目录并遵循快速启动指南！</p><p>TrueNAS SCALE 22。 2 “AngelFish”正在变得更加密切和接近， TrueCharts 团队和iXsystem已经在努力寻找未来应用的可用性。 动态缩放和分布式存储。 想知道更多关于 TrueCharts？ 访问 TrueCharts.org 或来访问我们的伟大社区：Discord上的TrueCharts！</p><p>TrueCharts and TrueNAS = 无尽可能性</p>]]></content:encoded>
         </item>
@@ -36,9 +36,9 @@
             <title><![CDATA[导入：TrueCharts Container 存储库]]></title>
             <link>https://truecharts.org/zh/blog/导入：TrueCharts Container 存储库</link>
             <guid>导入：TrueCharts Container 存储库</guid>
-            <pubDate>Mon, 18 Jul 2022 08:39:55 GMT</pubDate>
+            <pubDate>Mon, 18 Jul 2022 08:58:21 GMT</pubDate>
             <description><![CDATA[去年我们的增长速度不断加快，每几个月翻一番，使用者每隔几个月。 有些问题可以迅速和容易地得到解决，而其他问题则更加复杂。 其中一个问题恰好是不同集装箱来源造成的混乱。]]></description>
-            <content:encoded><![CDATA[<p>去年我们的增长速度不断加快，每几个月翻一番，使用者每隔几个月。 有些问题可以迅速和容易地得到解决，而其他问题则更加复杂。 其中一个问题恰好是不同集装箱来源造成的混乱。</p><p>这些容器源都有不同的标签格式、比率限制、下限，甚至有一个容器决定开始删除标签，导致应用程序被打断。 这显然不是我们希望我们的用户拥有的经验。</p><p>因此，我们在12月份较好的时间里建立了我们自己的集装箱分配系统。 TrueChasts Container Depository, or TCCR in short. TCCR 是一种我们已经完全建造的集装箱与我们镜像、屏幕和重新标记为标准格式的集装箱的组合。 这样做也使我们能够确保 <em>所有</em> 个容器都可以从多个来源获得：GHCR、Quay 和 Dockerhub。</p><p>为了实现这一点，我们与头巾结成了伙伴关系。 h, 这使我们能够轻松地在容器源之间为我们的存储库切换，同时给我们一些新内容：计量。 我们终于可以看到哪些容器是受欢迎的，哪些容器不是受欢迎的。 但我们也可以看到是否有人仍在使用旧版本的应用程序。 这使我们能够改进我们的决策过程：哪些应用可以运行，哪些旧版本可以继续支持。</p><p>你们所有人(在头脑下)都已经在运行部队派遣国，我们只有几个与此相关的问题。 我们很高兴再次创建了一些东西，突出显示我们为 TrueNAS SCALE 应用程序的 1 源。</p>]]></content:encoded>
+            <content:encoded><![CDATA[<p>去年我们的增长速度不断加快，每几个月翻一番，使用者每隔几个月。 有些问题可以迅速和容易地得到解决，而其他问题则更加复杂。 其中一个问题恰好是不同集装箱来源造成的混乱。</p><p>这些容器源都有不同的标签格式、比率限制、下限，甚至有一个容器决定开始删除标签，导致应用程序被打断。 这显然不是我们希望我们的用户拥有的经验。</p><p>因此，我们在12月份较好的时间里建立了我们自己的集装箱分配系统。 TrueChasts Container Depository, or TCCR in short. TCCR 是一种我们已经完全建造的集装箱与我们镜像、屏幕和重新标记为标准格式的集装箱的组合。 TCCR 是一种我们已经完全建造的集装箱与我们镜像、屏幕和重新标记为标准格式的集装箱的组合。 这样做也使我们能够确保 <em>所有</em> 个容器都可以从多个来源获得：GHCR、Quay 和 Dockerhub。</p><p>h, 这使我们能够轻松地在容器源之间为我们的存储库切换，同时给我们一些新内容：计量。 我们终于可以看到哪些容器是受欢迎的，哪些容器不是受欢迎的。 但我们也可以看到是否有人仍在使用旧版本的应用程序。 这使我们能够改进我们的决策过程：哪些应用可以运行，哪些旧版本可以继续支持。</p><p>你们所有人(在头脑下)都已经在运行部队派遣国，我们只有几个与此相关的问题。 我们很高兴再次创建了一些东西，突出显示我们为 TrueNAS SCALE 应用程序的 1 源。</p>]]></content:encoded>
         </item>
     </channel>
 </rss>
